@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globalStyles/normalize.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import './globalStyles/globals.css'
+import './globalStyles/menu.css'
 import Layout from '@/components/layouts/Layout'
 
 export const metadata: Metadata = {
@@ -11,9 +12,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang='en'>
       <body>
