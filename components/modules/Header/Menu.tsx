@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+import Logo from '@/components/elements/Logo/Logo'
 import { AllowedLangs } from '@/constants/lang'
 import { setLang } from '@/context/lang'
 import { $menuIsOpen, closeMenu } from '@/context/modals'
@@ -28,27 +30,37 @@ const Menu = () => {
 
   return (
     <nav className={`nav-menu ${menuIsOpen ? 'open' : 'close'}`}>
-      <button
-        className={`btn-reset nav-menu__close ${menuIsOpen ? 'open' : ''}`}
-        onClick={handleCloseMenu}
-      />
-      <div className={`nav-menu__lang ${menuIsOpen ? 'open' : ''}`}>
+      <div className='container nav-menu__container'>
+        <div className={`nav-menu__logo ${menuIsOpen ? 'open' : ''}`}>
+          <Logo />
+        </div>
+        <img
+          className={`nav-menu__bg ${menuIsOpen ? 'open' : ''}`}
+          src='/img/menu-bg1.svg'
+          alt='menu background'
+        />
         <button
-          className={`btn-reset nav-menu__lang__btn ${
-            lang === 'es' ? 'lang-active' : ''
-          }`}
-          onClick={handleSwitchLangToEs}
-        >
-          ES
-        </button>
-        <button
-          className={`btn-reset nav-menu__lang__btn ${
-            lang === 'en' ? 'lang-active' : ''
-          }`}
-          onClick={handleSwitchLangToEn}
-        >
-          EN
-        </button>
+          className={`btn-reset nav-menu__close ${menuIsOpen ? 'open' : ''}`}
+          onClick={handleCloseMenu}
+        />
+        <div className={`nav-menu__lang ${menuIsOpen ? 'open' : ''}`}>
+          <button
+            className={`btn-reset nav-menu__lang__btn ${
+              lang === 'es' ? 'lang-active' : ''
+            }`}
+            onClick={handleSwitchLangToEs}
+          >
+            ES
+          </button>
+          <button
+            className={`btn-reset nav-menu__lang__btn ${
+              lang === 'en' ? 'lang-active' : ''
+            }`}
+            onClick={handleSwitchLangToEn}
+          >
+            EN
+          </button>
+        </div>
       </div>
       <h1>Menu</h1>
     </nav>
