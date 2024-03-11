@@ -279,7 +279,8 @@
   }
 
   .nav-menu__bg {
-    right: 0;
+    right: -20px;
+    top: -70px;
   }
 }
 
