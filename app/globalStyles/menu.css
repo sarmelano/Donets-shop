@@ -292,11 +292,12 @@
 
 @media (max-width: 450px) {
   .nav-menu__logo {
+    margin-left: -23px;
     margin-bottom: 95px;
   }
 
   .nav-menu__container {
-    /* padding-top: 12px !important; */
+     padding-top: 14px !important;
   }
 
   .nav-menu__close {
@@ -310,6 +311,10 @@
 
   .nav-menu__lang__btn {
     padding: 8px 20px;
+  }
+
+  .nav-menu__list {
+    margin-left: 5px;
   }
 
   .nav-menu__list__item:not(:last-child) {
