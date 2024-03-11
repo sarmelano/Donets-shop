@@ -11,6 +11,7 @@ import { useState } from 'react'
 import Accordion from '../Accordion/Accordion'
 import { usePathname } from 'next/navigation'
 import MenuLinkItem from './MenuLinkItem'
+import Link from 'next/link'
 
 const Menu = () => {
   const [showCatalogList, setShowCatalogList] = useState(false)
@@ -32,6 +33,18 @@ const Menu = () => {
     setShowCatalogList(true)
     setShowBuyersList(false)
     setShowContactsList(false)
+  }
+
+  const handleShowBuyersList = () => {
+    setShowCatalogList(false)
+    setShowBuyersList(true)
+    setShowContactsList(false)
+  }
+
+  const handleShowContactsList = () => {
+    setShowCatalogList(false)
+    setShowBuyersList(false)
+    setShowContactsList(true)
   }
 
   const handleCloseMenu = () => {
@@ -232,8 +245,108 @@ const Menu = () => {
               )}
             </AnimatePresence>
           </li>
-          <li className='nav-menu__list__item' />
-          <li className='nav-menu__list__item' />
+          <li className='nav-menu__list__item'>
+            <button
+              className='btn-reset nav-menu__list__item__btn'
+              onMouseEnter={handleShowBuyersList}
+            >
+              {translations[lang].main_menu.buyers}
+            </button>
+            <AnimatePresence>
+              {showBuyersList && (
+                <motion.ul
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className='list-reset nav-menu__accordion'
+                >
+                  <li className='nav-menu__accordion__item'>
+                    <Link
+                      href='/about'
+                      className='nav-menu__accordion__item__link nav-menu__accordion__item__title'
+                    >
+                      {translations[lang].main_menu.about}
+                    </Link>
+                  </li>
+                  <li className='nav-menu__accordion__item'>
+                    <Link
+                      href='/blog'
+                      className='nav-menu__accordion__item__link'
+                    >
+                      {translations[lang].main_menu.blog}
+                    </Link>
+                  </li>
+                  <li className='nav-menu__accordion__item'>
+                    <Link
+                      href='/shipping-and-payment'
+                      className='nav-menu__accordion__item__link'
+                    >
+                      {translations[lang].main_menu.shipping}
+                    </Link>
+                  </li>
+                  <li className='nav-menu__accordion__item'>
+                    <Link
+                      href='/purchase-returns'
+                      className='nav-menu__accordion__item__link'
+                    >
+                      {translations[lang].main_menu.returns}
+                    </Link>
+                  </li>
+                </motion.ul>
+              )}
+            </AnimatePresence>
+          </li>
+          <li className='nav-menu__list__item'>
+            <button
+              className='btn-reset nav-menu__list__item__btn'
+              onMouseEnter={handleShowContactsList}
+            >
+              {translations[lang].main_menu.contacts}
+            </button>
+            <AnimatePresence>
+              {showContactsList && (
+                <motion.ul
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className='list-reset nav-menu__accordion'
+                >
+                  <li className='nav-menu__accordion__item'>
+                    <a
+                      href='#'
+                      className='nav-menu__accordion__item__link nav-menu__accordion__item__title'
+                    >
+                      +1 (559) *** ** **
+                    </a>
+                  </li>
+                  <li className='nav-menu__accordion__item'>
+                    <a
+                      href='mailto:developer.sarmelano@gmail.com'
+                      className='nav-menu__accordion__item__link'
+                    >
+                      Email
+                    </a>
+                  </li>
+                  <li className='nav-menu__accordion__item'>
+                    <Link
+                      href='https://t.me/veslam'
+                      className='nav-menu__accordion__item__link'
+                    >
+                      {translations[lang].main_menu.Whatsapp}
+                    </Link>
+                  </li>
+                  <li className='nav-menu__accordion__item'>
+                    <Link
+                      href='https://www.instagram.com/dima_donets/'
+                      className='nav-menu__accordion__item__link'
+                    >
+                      {translations[lang].main_menu.insta}
+                    </Link>
+                  </li>
+                </motion.ul>
+              )}
+            </AnimatePresence>
+          </li>
         </ul>
       </div>
       <h1>Menu</h1>
