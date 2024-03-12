@@ -10,6 +10,9 @@ import { removeOverflowHiddenFromBody } from '@/lib/utils/common'
 import { useUnit } from 'effector-react'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import CatalogMenuButton from './CatalogMenuButton'
+import CatalogMenuList from './CatalogMenuList'
+import Accordion from '../Accordion/Accordion'
+import Link from 'next/link'
 
 const CatalogMenu = () => {
   const catalogMenuIsOpen = useUnit($catalogMenuIsOpen)
@@ -151,6 +154,11 @@ const CatalogMenu = () => {
                     isActive,
                   })
 
+                  const isCurrentList = (
+                    showList: boolean,
+                    currentId: number
+                  ) => showList && id === currentId
+
                   return (
                     <motion.li
                       key={id}
@@ -180,6 +188,44 @@ const CatalogMenu = () => {
                             />
                           )}
                         </>
+                      )}
+                      {!isMedia450 && (
+                        <AnimatePresence>
+                          {isCurrentList(showClothList, 1) && (
+                            <CatalogMenuList items={items} />
+                          )}
+                          {isCurrentList(showAccessoriesList, 2) && (
+                            <CatalogMenuList items={items} />
+                          )}
+                          {isCurrentList(showSouuvenirsList, 3) && (
+                            <CatalogMenuList items={items} />
+                          )}
+                          {isCurrentList(showOfficeList, 4) && (
+                            <CatalogMenuList items={items} />
+                          )}
+                        </AnimatePresence>
+                      )}
+                      {isMedia450 && (
+                        <Accordion
+                          title={name}
+                          titleClass='btn-reset nav-menu__accordion__item__title'
+                        >
+                          <ul className='list-reset catalog__accordion__list'>
+                            {items.map((title, i) => (
+                              <li
+                                key={i}
+                                className='catalog__accordion__list__item'
+                              >
+                                <Link
+                                  href='/catalog'
+                                  className='nav-menu__accordion__item__list__item__link'
+                                >
+                                  {title}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </Accordion>
                       )}
                     </motion.li>
                   )
