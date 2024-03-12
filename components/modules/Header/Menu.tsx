@@ -11,7 +11,7 @@ import { useState } from 'react'
 import Accordion from '../Accordion/Accordion'
 import { usePathname } from 'next/navigation'
 import MenuLinkItem from './MenuLinkItem'
-import Link from 'next/link'
+//import Link from 'next/link'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import BuyersListItems from './BuyersListItems'
 import ContactsListItems from './ContactsListItems'
@@ -322,7 +322,6 @@ const Menu = () => {
           </li>
         </ul>
       </div>
-      <h1>Menu</h1>
     </nav>
   )
 }

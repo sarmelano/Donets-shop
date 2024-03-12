@@ -1,5 +1,8 @@
 {
   "en": {
+    "common": {
+      "more": "More"
+    },
     "header": {
       "menu_btn": "Menu"
     },
@@ -32,10 +35,25 @@
       "notebook": "Notebooks",
       "t-shirts": "T-shirts",
       "main_heading": "Comparison"
+    },
+    "breadcrumbs": {
+      "main": "Main",
+      "comparison": "Comparison",
+      "cart": "Cart",
+      "favorites": "Favorites",
+      "catalog": "Catalog",
+      "profile": "Profile",
+      "cloth": "Cloth",
+      "accessories": "Accessories",
+      "office": "Office",
+      "souvenirs": "Souvenirs",
+      "order": "Placing an order"
     }
   },
-
   "es": {
+    "common": {
+      "more": "Más"
+    },
     "header": {
       "menu_btn": "Menú"
     },
@@ -68,6 +86,19 @@
       "notebook": "Cuadernos",
       "t-shirts": "Camisetas",
       "main_heading": "Comparación"
+    },
+    "breadcrumbs": {
+      "main": "Principal",
+      "comparison": "Comparación",
+      "cart": "Carrito",
+      "favorites": "Favoritos",
+      "catalog": "Catálogo",
+      "profile": "Perfil",
+      "cloth": "Tela",
+      "accessories": "Accesorios",
+      "office": "Oficina",
+      "souvenirs": "Recuerdos",
+      "order": "Hacer un pedido"
     }
   }
 }
