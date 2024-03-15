@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import SearchModal from '../modules/Header/SearchModal'
 import { $searchModal } from '@/context/modals'
 import { handleCloseSearchModal } from '@/lib/utils/common'
+import Footer from '../modules/Footer/Footer'
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const isMedia800 = useMediaQuery(800)
@@ -34,7 +35,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         }`}
         onClick={handleCloseSearchModal}
       />
-      <div />
+      <Footer />
     </>
   )
 }
