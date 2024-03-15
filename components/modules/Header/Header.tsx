@@ -6,6 +6,7 @@ import { addOverflowHiddenFromBody } from '@/lib/utils/common'
 import Logo from '@/components/elements/Logo/Logo'
 import { useLang } from '@/hooks/useLang'
 import '@/app/globalStyles/header.css'
+import CartPopup from './CartPopup/CartPopup'
 
 const Header = () => {
   const { lang, translations } = useLang()
@@ -50,10 +51,7 @@ const Header = () => {
             />
           </li>
           <li className='header__links__item'>
-            <Link
-              href='/cart'
-              className='header__links__item__btn header__links__item__btn--cart'
-            />
+            <CartPopup />
           </li>
           <li className='header__links__item header__links__item__btn--profile'>
             <Link

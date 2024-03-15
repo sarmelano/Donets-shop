@@ -1,7 +1,8 @@
 {
   "en": {
     "common": {
-      "more": "More"
+      "more": "More",
+      "order_price": "Order price"
     },
     "header": {
       "menu_btn": "Menu",
@@ -54,7 +55,8 @@
   },
   "es": {
     "common": {
-      "more": "Más"
+      "more": "Más",
+      "order_price": "Precio del pedido"
     },
     "header": {
       "menu_btn": "Menú",
