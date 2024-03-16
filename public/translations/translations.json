@@ -2,7 +2,8 @@
   "en": {
     "common": {
       "more": "More",
-      "order_price": "Order price"
+      "order_price": "Order price",
+      "ad": "Ad"
     },
     "header": {
       "menu_btn": "Menu",
@@ -58,12 +59,37 @@
       "privacy": "Privacy policy",
       "mobile_version": "Mobile version",
       "full_version": "Full version of the site"
+    },
+    "main_page": {
+      "hero_hidden_title": "Donets store",
+      "hero_title": "Donets",
+      "hero_description": "Be in style",
+      "hero_subtitle": "with the new “Line” collection",
+      "catalog_btn": "Catalog",
+      "category_title": "Categories",
+      "category_cloth": "Cloth",
+      "category_office": "Office",
+      "category_accessories": "Accessories",
+      "category_souvenirs": "Souvenirs",
+      "bestsellers_title": "Bestsellers",
+      "new_title": "New",
+      "brand_title": "Life of our brand",
+      "brand_nature": "With care for nature",
+      "brand_look": "New look at merch",
+      "brand_idea": "Idea of the collection «Black»",
+      "is_new": "New",
+      "is_bestseller": "Bestseller",
+      "tShirt": "T-Shirt",
+      "violet": "violet",
+      "orange": "orange",
+      "black": "black"
     }
   },
   "es": {
     "common": {
       "more": "Más",
-      "order_price": "Precio del pedido"
+      "order_price": "Precio del pedido",
+      "ad": "Ad"
     },
     "header": {
       "menu_btn": "Menú",
@@ -119,6 +145,30 @@
       "privacy": "Política de privacidad",
       "mobile_version": "Versión móvil",
       "full_version": "Versión completa del sitio"
+    },
+    "main_page": {
+      "hero_hidden_title": "Tienda Donets",
+      "hero_title": "Donets",
+      "hero_description": "Estar a la moda",
+      "hero_subtitle": "con la nueva colección Line",
+      "catalog_btn": "Catálogo",
+      "category_title": "Categorías",
+      "category_cloth": "Tela",
+      "category_office": "Oficina",
+      "category_accessories": "Accesorios",
+      "category_souvenirs": "Recuerdos",
+      "bestsellers_title": "Los más vendidos",
+      "new_title": "Nuevo",
+      "brand_title": "La vida de nuestra marca",
+      "brand_nature": "Cuidando la naturaleza",
+      "brand_look": "Nueva imagen del comercio",
+      "brand_idea": "Idea de la colección Black",
+      "is_new": "Nuevo",
+      "is_bestseller": "Bestseller",
+      "tShirt": "Camisetas",
+      "violet": "violeta",
+      "orange": "naranja",
+      "black": "black"
     }
   }
 }
