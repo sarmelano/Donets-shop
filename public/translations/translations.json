@@ -84,6 +84,26 @@
       "violet": "violet",
       "orange": "orange",
       "black": "black"
+    },
+    "product": {
+      "available": "Available",
+      "not_available": "Not available",
+      "vendor_code": "Vendor",
+      "size_table": "Size table",
+      "count": "Count",
+      "to_cart": "To cart",
+      "to_favorite": "To favorite",
+      "description": "Description",
+      "characteristics": "Characteristics",
+      "collection_goods": "Products from the collection",
+      "watched": "You watched",
+      "add_to_favorites": "Add to favorites",
+      "add_to_comparison": "Add to comparison",
+      "quick_view": "Quick view",
+      "total_in_cart": "Total in cart",
+      "more": "More information about the product",
+      "composition": "Composition",
+      "in_cart": "Added"
     }
   },
   "es": {
@@ -171,6 +191,26 @@
       "violet": "violeta",
       "orange": "naranja",
       "black": "black"
+    },
+    "product": {
+      "available": "Disponible",
+      "not_available": "No disponible",
+      "vendor_code": "Vendedor",
+      "size_table": "Tabla de tallas",
+      "count": "Cuenta",
+      "to_cart": "A la cesta",
+      "to_favorite": "A favoritos",
+      "description": "Descripción",
+      "characteristics": "Características",
+      "collection_goods": "Productos de la colección",
+      "watched": "Viste",
+      "add_to_favorites": "Añadir a favoritos",
+      "add_to_comparison": "Añadir a la comparación",
+      "quick_view": "Vista rápida",
+      "total_in_cart": "Total en la cesta",
+      "more": "Más información sobre el producto",
+      "composition": "Composición",
+      "in_cart": "Añadido"
     }
   }
 }
