@@ -11,6 +11,7 @@ import ProductLabel from './ProductLabel'
 import ProductItemActionBtn from '@/components/elements/ProductItemActionBtn/ProductItemActionBtn'
 import ProductAvailable from '@/components/elements/ProductAvaliable/ProductAvaliable'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
+import NonexistentCurrency from '@/components/elements/NonexistentCurrency/NonexistentCurrency'
 
 const ProductsListItem = ({ item, title }: IProductsListItemProps) => {
   const { lang, translations } = useLang()
@@ -52,7 +53,9 @@ const ProductsListItem = ({ item, title }: IProductsListItemProps) => {
                   ]
                 }
               </span>
-              <span>{formatPrice(+item.price)} DDD</span>
+              <span>
+                {formatPrice(+item.price)} <NonexistentCurrency />
+              </span>
             </p>
           </Link>
         </li>
@@ -108,7 +111,7 @@ const ProductsListItem = ({ item, title }: IProductsListItemProps) => {
               inStock={+item.inStock}
             />
             <span className={styles.list__item__price}>
-              {formatPrice(+item.price)} DDD
+              {formatPrice(+item.price)} <NonexistentCurrency />
             </span>
           </div>
           <button className={`btn-reset ${styles.list__item__cart}`}>

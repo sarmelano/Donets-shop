@@ -1,11 +1,12 @@
 import Image from 'next/image'
-import currency from '@/public/img/NonexistentCurrency.svg'
 
 const NonexistentCurrency = () => (
   <Image
-    src={currency}
+    src='/img/NonexistentCurrency.svg'
     alt='Non-existent Currency'
     className='nonexistentCurrency'
+    width={32}
+    height={20}
   />
 )
 
