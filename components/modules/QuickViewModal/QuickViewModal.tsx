@@ -41,7 +41,6 @@ const QuickViewModal = () => {
           withTooltip={false}
         />
         <ProductItemActionBtn
-          //spinner={addToComparisonSpinner}
           text={translations[lang].product.add_to_comparison}
           iconClass='actions__btn_comparison'
           withTooltip={false}
