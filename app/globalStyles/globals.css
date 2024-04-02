@@ -74,7 +74,7 @@ body::-webkit-scrollbar-thumb:hover {
   font-weight: 700;
 }
 
-.header__search-overlay {
+.header__search-overlay, .quick-view-modal-overlay {
   background: #16181b;
   height: 100%;
   left: 0;
@@ -90,6 +90,12 @@ body::-webkit-scrollbar-thumb:hover {
   opacity: 0.6;
   visibility: visible;
   z-index: 101;
+}
+
+.quick-view-modal-overlay.overlay-active {
+  opacity: 0.6;
+  visibility: visible;
+  z-index: 2;
 }
 
 .visually-hidden {
@@ -134,6 +140,68 @@ body::-webkit-scrollbar-thumb:hover {
   border: 2px solid #70f;
   left: -4px;
   top: -4px;
+}
+
+.sizes-table-btn {
+  color: #16D9A6;
+  font-size: 14px;
+  text-decoration-line: underline;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-radius: 24px;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.counter button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.counter button {
+  position: relative;
+  height: 22px;
+  width: 24px;
+}
+
+.counter button::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.counter button:first-child:before {
+  -webkit-mask: url(/img/minus.svg) no-repeat 50% 50%;
+  mask: url(/img/minus.svg) no-repeat 50% 50%;
+}
+
+.counter button:last-child:before {
+  -webkit-mask: url(/img/plus.svg) no-repeat 50% 50%;
+  mask: url(/img/plus.svg) no-repeat 50% 50%;
+}
+
+.counter button:hover::before {
+  transition: background-color 0.2s ease-in-out;
+  background-color: #9466FF;
+}
+
+.counter span {
+  color: rgba(255, 255, 255, 0.90);
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.quick-modal-dots li.slick-active button {
+  background-image: url(/img/white-ellipse.svg) !important; 
 }
 
 @media (max-width: 1460px) {

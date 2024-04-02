@@ -104,6 +104,29 @@
       "more": "More information about the product",
       "composition": "Composition",
       "in_cart": "Added"
+    },
+    "catalog": {
+      "all_categories": "All categories",
+      "popular": "Popular",
+      "new": "New",
+      "cheap_first": "Cheap first",
+      "expensive_first": "Expensive first",
+      "categories": "Categories",
+      "sort": "Sort",
+      "price": "Price",
+      "from": "From",
+      "to": "To",
+      "done": "Done",
+      "size": "Size",
+      "color": "Color",
+      "purpure": "Purpure",
+      "orange": "Orange",
+      "yellow": "Yellow",
+      "black": "Black",
+      "white": "White",
+      "cotton": "Cotton",
+      "synthetics": "Synthetic",
+      "polyester": "Polyester"
     }
   },
   "es": {
@@ -211,6 +234,29 @@
       "more": "Más información sobre el producto",
       "composition": "Composición",
       "in_cart": "Añadido"
+    },
+    "catalog": {
+      "all_categories": "Todas las categorías",
+      "popular": "Popular",
+      "new": "Nuevo",
+      "cheap_first": "Primero barato",
+      "expensive_first": "Primero caro",
+      "categories": "Categorías",
+      "sort": "Ordenar",
+      "price": "Precio",
+      "from": "En",
+      "to": "A",
+      "done": "Hecho",
+      "size": "Talla",
+      "color": "Color",
+      "purpure": "Pureza",
+      "orange": "Naranja",
+      "yellow": "Amarillo",
+      "black": "Negro",
+      "white": "Blanco",
+      "cotton": "Algodón",
+      "synthetics": "Sintético",
+      "polyester": "Poliéster"
     }
   }
 }
