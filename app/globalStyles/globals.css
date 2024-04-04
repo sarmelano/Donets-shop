@@ -74,7 +74,7 @@ body::-webkit-scrollbar-thumb:hover {
   font-weight: 700;
 }
 
-.header__search-overlay, .quick-view-modal-overlay {
+.header__search-overlay, .quick-view-modal-overlay, .sizes-table-overlay {
   background: #16181b;
   height: 100%;
   left: 0;
@@ -86,16 +86,23 @@ body::-webkit-scrollbar-thumb:hover {
   z-index: -1;
 }
 
-.header__search-overlay.overlay-active {
+.header__search-overlay.overlay-active,
+.quick-view-modal-overlay.overlay-active,
+.sizes-table-overlay.overlay-active {
   opacity: 0.6;
   visibility: visible;
+}
+
+.header__search-overlay.overlay-active {
   z-index: 101;
 }
 
 .quick-view-modal-overlay.overlay-active {
-  opacity: 0.6;
-  visibility: visible;
   z-index: 2;
+}
+
+.sizes-table-overlay.overlay-active {
+  z-index: 10;
 }
 
 .visually-hidden {

@@ -127,6 +127,16 @@
       "cotton": "Cotton",
       "synthetics": "Synthetic",
       "polyester": "Polyester"
+    },
+    "size_table": {
+      "head_circumference": "Head circumference, cm",
+      "size": "Size",
+      "russian_size": "European size",
+      "manufacturer_size": "Manufacturer size",
+      "chest_circumference": "Chest circumference, cm",
+      "waist_circumference": "Waist circumference, cm",
+      "hip_circumference": "Hip circumference, cm",
+      "title": "Size table"
     }
   },
   "es": {
@@ -257,6 +267,16 @@
       "cotton": "Algodón",
       "synthetics": "Sintético",
       "polyester": "Poliéster"
+    },
+    "size_table": {
+      "head_circumference": "Perímetro cefálico, cm",
+      "size": "Talla",
+      "russian_size": "Talla europea",
+      "manufacturer_size": "Tamaño del fabricante",
+      "chest_circumference": "Perímetro torácico, cm",
+      "waist_circumference": "Perímetro de cintura, cm",
+      "hip_circumference": "Perímetro de la cadera, cm",
+      "title": "Tabla de tallas"
     }
   }
 }
