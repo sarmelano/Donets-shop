@@ -137,6 +137,32 @@
       "waist_circumference": "Waist circumference, cm",
       "hip_circumference": "Hip circumference, cm",
       "title": "Size table"
+    },
+    "auth_popup": {
+      "registration_title": "Registration",
+      "registration_text": "Create",
+      "registration_description": "Create an account",
+      "registration_question": "Already have an account?",
+      "login_text": "Login",
+      "login_description": "Login to your account",
+      "forgot_password": "Forgot your password?",
+      "login_question": "Don't have an account yet?",
+      "register": "Register!",
+      "name": "Name",
+      "password": "Password"
+    },
+    "validation": {
+      "invalid_value": "Invalid value!",
+      "requiredName": "Enter your name!",
+      "invalid_phone": "Invalid phone!",
+      "required_email": "Enter your email!",
+      "invalid_email": "Invalid email!",
+      "min_2": "Min 2 characters!",
+      "max_15": "Max 2 characters!",
+      "required_password": "Enter your password!",
+      "min_4": "Min 4 characters!",
+      "max_20": "Max 20 characters!",
+      "max_255": "Max 255 characters!"
     }
   },
   "es": {
@@ -277,6 +303,32 @@
       "waist_circumference": "Perímetro de cintura, cm",
       "hip_circumference": "Perímetro de la cadera, cm",
       "title": "Tabla de tallas"
+    },
+    "auth_popup": {
+      "registration_title": "Inscripción",
+      "registration_text": "Cree",
+      "registration_description": "Crear una cuenta",
+      "registration_question": "¿Ya tiene una cuenta?",
+      "login_text": "Login",
+      "login_description": "Acceda a su cuenta",
+      "forgot_password": "¿Olvidó su contraseña?",
+      "login_question": "¿Aún no tiene cuenta?",
+      "register": "Regístrese!",
+      "name": "Nombre",
+      "password": "Contraseña"
+    },
+    "validation": {
+      "invalid_value": "¡Valor no válido!",
+      "requiredName": "Escriba su nombre",
+      "invalid_phone": "¡Teléfono no válido!",
+      "required_email": "Introduzca su correo electrónico",
+      "invalid_email": "Correo no válido",
+      "min_2": "Mínimo 2 caracteres",
+      "max_15": "Máximo 2 caracteres",
+      "required_password": "Introduzca su contraseña",
+      "min_4": "Mínimo 4 caracteres",
+      "max_20": "Máximo 20 caracteres",
+      "max_255": "Máximo 255 caracteres"
     }
   }
 }
