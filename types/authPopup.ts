@@ -1,4 +1,9 @@
-import { Field, FieldErrors, FieldErrorsImpl, UseFormRegister } from "react-hook-form"
+import {
+  Field,
+  FieldErrors,
+  FieldErrorsImpl,
+  UseFormRegister,
+} from 'react-hook-form'
 
 export interface IInputs {
   name: string

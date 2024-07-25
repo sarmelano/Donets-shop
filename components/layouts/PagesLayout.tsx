@@ -43,12 +43,10 @@ const PagesLayout = ({ children }: { children: React.ReactNode }) => {
           onClick={handleCloseSizeTable}
         />
         <div
-                className={`auth-overlay ${
-                  openAuthPopup ? 'overlay-active' : ''
-                }`}
-                onClick={handleCloseAuthPopup}
-              />
-              <Toaster position='top-center' reverseOrder={false} />
+          className={`auth-overlay ${openAuthPopup ? 'overlay-active' : ''}`}
+          onClick={handleCloseAuthPopup}
+        />
+        <Toaster position='top-center' reverseOrder={false} />
       </body>
     </html>
   )

@@ -23,6 +23,6 @@ export const useAuthForm = (
     register,
     errors,
     handleSubmit,
-    handleSignupWithOAuth
+    handleSignupWithOAuth,
   }
 }

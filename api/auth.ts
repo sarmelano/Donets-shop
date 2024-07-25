@@ -1,8 +1,8 @@
-import { createEffect } from "effector";
-import toast from "react-hot-toast";
+import { createEffect } from 'effector'
+import toast from 'react-hot-toast'
 import api from './apiInstance'
-import { onAuthSuccess } from "@/lib/utils/auth";
-import { ISignUpFx } from "@/types/authPopup";
+import { onAuthSuccess } from '@/lib/utils/auth'
+import { ISignUpFx } from '@/types/authPopup'
 
 export const signUpFx = createEffect(
   async ({ name, password, email }: ISignUpFx) => {
@@ -12,7 +12,7 @@ export const signUpFx = createEffect(
       email,
     })
 
-    if(data.warningMessage) {
+    if (data.warningMessage) {
       toast.error(data.warningMessage)
       return
     }
@@ -23,14 +23,13 @@ export const signUpFx = createEffect(
   }
 )
 
-export const signInFx = createEffect(
-  async ({ email, password }: ISignUpFx) => {
-    const { data } = await api.post('/api/users/login', { 
-    email, 
-    password 
+export const signInFx = createEffect(async ({ email, password }: ISignUpFx) => {
+  const { data } = await api.post('/api/users/login', {
+    email,
+    password,
   })
 
-  if(data.warningMessage) {
+  if (data.warningMessage) {
     toast.error(data.warningMessage)
     return
   }

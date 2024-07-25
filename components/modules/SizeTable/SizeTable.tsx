@@ -18,7 +18,7 @@ const SizeTable = () => {
   const [lSize, setLSize] = useState(false)
   const [xlSize, setXLSize] = useState(false)
   const [xxlSize, setXXLSize] = useState(false)
-  const { selectedSize, setSelectedSize, /* product */ } = useCartAction()
+  const { selectedSize, setSelectedSize /* product */ } = useCartAction()
 
   const productSizes = useUnit($sizeTableSizes)
   const isHeaddressType = productSizes.type === 'headdress'
@@ -247,21 +247,21 @@ const SizeTable = () => {
             {isHeaddressType
               ? headdressSizes.map((headdressSizesItem) => (
                 <tr
-                  key={headdressSizesItem.id}
-                  {...(trProps(
+                    key={headdressSizesItem.id}
+                    {...(trProps(
                       headdressSizesItem
-                  ) as React.HTMLAttributes<HTMLTableRowElement>)}
+                    ) as React.HTMLAttributes<HTMLTableRowElement>)}
                   >
                   <td>{headdressSizesItem.headCircumference}</td>
                   <td>{headdressSizesItem.manufacturerSize}</td>
                 </tr>
-              ))
+                ))
               : dressSizes.map((item) => (
                 <tr
-                  key={item.id}
-                  {...(trProps(
+                    key={item.id}
+                    {...(trProps(
                       item
-                  ) as React.HTMLAttributes<HTMLTableRowElement>)}
+                    ) as React.HTMLAttributes<HTMLTableRowElement>)}
                   >
                   <td>{item.russianSize}</td>
                   <td>{item.manufacturerSize}</td>

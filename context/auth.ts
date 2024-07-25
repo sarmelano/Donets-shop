@@ -1,7 +1,7 @@
-import { signInFx, signUpFx } from '@/api/auth';
-import { ISignUpFx } from '@/types/authPopup';
-import { createDomain, sample } from 'effector';
-import toast from 'react-hot-toast';
+import { signInFx, signUpFx } from '@/api/auth'
+import { ISignUpFx } from '@/types/authPopup'
+import { createDomain, sample } from 'effector'
+import toast from 'react-hot-toast'
 
 const auth = createDomain()
 
@@ -31,26 +31,26 @@ export const $auth = auth
     toast.error(error.message)
   })
 
-  sample({
-    clock: handleSignUp,
-    source: $auth,
-    fn: (_, { name, email, password, isOAuth }) => ({
-      name,
-      email,
-      password,
-      isOAuth
-    }),
-    target: signUpFx,
-  })
+sample({
+  clock: handleSignUp,
+  source: $auth,
+  fn: (_, { name, email, password, isOAuth }) => ({
+    name,
+    email,
+    password,
+    isOAuth,
+  }),
+  target: signUpFx,
+})
 
-  sample({
-    clock: handleSignIn,
-    source: $auth,
-    fn: (_, { email, password, isOAuth, name }) => ({
-      email,
-      password,
-      isOAuth,
-      name
-    }),
-    target: signInFx,
-  })
+sample({
+  clock: handleSignIn,
+  source: $auth,
+  fn: (_, { email, password, isOAuth, name }) => ({
+    email,
+    password,
+    isOAuth,
+    name,
+  }),
+  target: signInFx,
+})

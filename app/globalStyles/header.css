@@ -1,8 +1,10 @@
 .header {
   position: relative;
   z-index: 3;
-  background-color: #1D2533;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.20), 0px 0px 8px 0px rgba(0, 0, 0, 0.10);
+  background-color: #1d2533;
+  box-shadow:
+    0px 2px 4px 0px rgba(0, 0, 0, 0.2),
+    0px 0px 8px 0px rgba(0, 0, 0, 0.1);
 }
 
 .header__container {
@@ -16,8 +18,9 @@
 .header__logo {
   position: absolute;
   left: 50%;
-/*   top: 8px;
- */  transform: translateX(-65%);
+  /*   top: 8px;
+ */
+  transform: translateX(-65%);
 }
 
 .header__links {
@@ -33,7 +36,7 @@
 }
 
 .header__links__item__btn::before {
-  background-color: #E8E9EA;
+  background-color: #e8e9ea;
   content: '';
   height: 100%;
   width: 100%;
@@ -70,7 +73,7 @@
 
 .header__links__item__btn:hover::before {
   transition: background-color 0.2s ease-in-out;
-  background-color: #9466FF;
+  background-color: #9466ff;
 }
 
 .header__links__item__btn {
@@ -91,14 +94,14 @@
 }
 
 .header__burger {
-  color: #E8E9EA;
+  color: #e8e9ea;
   font-size: 24px;
-  transition: .2s ease-in-out color;
+  transition: 0.2s ease-in-out color;
   font-weight: 500;
 }
 
 .header__burger::before {
-  background-color: #E8E9EA;
+  background-color: #e8e9ea;
   content: '';
   height: 25px;
   width: 25px;
@@ -112,12 +115,12 @@
 
 .header__burger:hover::before {
   transition: background-color 0.2s ease-in-out;
-  background-color: #9466FF;
+  background-color: #9466ff;
 }
 
 .header__burger:hover {
-  color: #9466FF;
-  transition: .2s ease-in-out color;
+  color: #9466ff;
+  transition: 0.2s ease-in-out color;
 }
 
 @media (max-width: 800px) {
@@ -132,7 +135,7 @@
     padding-bottom: 20px;
   }
 
-  .header__links__item:nth-child(n+2):nth-child(-n+4) {
+  .header__links__item:nth-child(n + 2):nth-child(-n + 4) {
     display: none;
   }
 
