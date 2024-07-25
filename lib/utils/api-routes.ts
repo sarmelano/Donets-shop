@@ -49,7 +49,7 @@ export const generateTokens = (name: string, email: string) => {
     }
   )
 
-  const rofreshToken = jwt.sign(
+  const refreshToken = jwt.sign(
     {
       email,
     },
@@ -57,7 +57,7 @@ export const generateTokens = (name: string, email: string) => {
     { expiresIn: '10m' }
   )
 
-  return { accessToken, rofreshToken }
+  return { accessToken, refreshToken }
 }
 
 export const createUserAndGenerateTokens = async (
