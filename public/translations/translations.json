@@ -9,7 +9,9 @@
     "header": {
       "menu_btn": "Menu",
       "search_products": "Search for products",
-      "search_infos": "Product name, category, type..."
+      "search_infos": "Product name, category, type...",
+      "profile": "Profile",
+      "logout": "Logout"
     },
     "main_menu": {
       "catalog": "Catalog",
@@ -175,7 +177,9 @@
     "header": {
       "menu_btn": "Menú",
       "search_products": "Buscar productos",
-      "search_infos": "Nombre del producto, categoría, tipo..."
+      "search_infos": "Nombre del producto, categoría, tipo...",
+      "profile": "Perfil",
+      "logout": "Salir"
     },
     "main_menu": {
       "catalog": "Catálogo",

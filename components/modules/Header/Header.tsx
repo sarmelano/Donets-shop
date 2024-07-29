@@ -1,5 +1,8 @@
 'use client'
+import { useUnit } from 'effector-react'
 import Link from 'next/link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import Menu from './Menu'
 import { openMenu, openSearchModal } from '@/context/modals'
 import {
@@ -10,8 +13,12 @@ import Logo from '@/components/elements/Logo/Logo'
 import { useLang } from '@/hooks/useLang'
 import '@/app/globalStyles/header.css'
 import CartPopup from './CartPopup/CartPopup'
+import HeaderProfile from './HeaderProfile'
+import { $isAuth } from '@/context/auth'
 
 const Header = () => {
+  const isAuth = useUnit($isAuth)
+  const loginCheckSpinner = false
   const { lang, translations } = useLang()
 
   const handleOpenMenu = () => {
@@ -57,10 +64,16 @@ const Header = () => {
             <CartPopup />
           </li>
           <li className='header__links__item header__links__item__btn--profile'>
-            <button
-              className='btn-reset header__links__item__btn header__links__item__btn--profile'
-              onClick={handleOpenAuthPopup}
-            />
+            {isAuth ? (
+              <HeaderProfile />
+            ) : loginCheckSpinner ? (
+              <FontAwesomeIcon icon={faSpinner} spin />
+            ) : (
+              <button
+                className='btn-reset header__links__item__btn header__links__item__btn--profile'
+                onClick={handleOpenAuthPopup}
+              />
+            )}
           </li>
         </ul>
       </div>
