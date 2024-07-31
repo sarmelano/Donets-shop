@@ -22,7 +22,7 @@ const HeaderProfile = forwardRef<HTMLDivElement, IWrappedComponentProps>(
           onClick={handleTogglePopup}
         >
           <Image
-            src={src ? src : '/img/profile.svg'}
+            src={src ? src : '/img/profile-in.svg'}
             alt={alt ? alt : 'profile'}
             width={24}
             height={24}

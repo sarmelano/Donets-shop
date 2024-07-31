@@ -8,6 +8,7 @@ import { openMenu, openSearchModal } from '@/context/modals'
 import {
   addOverflowHiddenFromBody,
   handleOpenAuthPopup,
+  triggerLoginCheck,
 } from '@/lib/utils/common'
 import Logo from '@/components/elements/Logo/Logo'
 import { useLang } from '@/hooks/useLang'
@@ -15,11 +16,17 @@ import '@/app/globalStyles/header.css'
 import CartPopup from './CartPopup/CartPopup'
 import HeaderProfile from './HeaderProfile'
 import { $isAuth } from '@/context/auth'
+import { loginCheckFx } from '@/api/auth'
+import { useEffect } from 'react'
+import { $user } from '@/context/user'
 
 const Header = () => {
   const isAuth = useUnit($isAuth)
-  const loginCheckSpinner = false
+  const loginCheckSpinner = useUnit(loginCheckFx.pending)
   const { lang, translations } = useLang()
+  const user = useUnit($user)
+
+  console.log(user)
 
   const handleOpenMenu = () => {
     addOverflowHiddenFromBody()
@@ -30,6 +37,10 @@ const Header = () => {
     openSearchModal()
     addOverflowHiddenFromBody()
   }
+
+  useEffect(() => {
+    triggerLoginCheck()
+  }, [])
 
   return (
     <header className='header'>
