@@ -43,12 +43,7 @@ const ProductsListItem = ({ item, title }: IProductsListItemProps) => {
               subtitleRectClassName={styles.list__item_ad__subtitle__rect}
             />
             <div className={styles.list__item_ad__img}>
-              <Image
-                src={item.images[0]}
-                alt={item.name}
-                fill
-                objectFit='contain'
-              />
+              <Image src={item.images[0]} alt={item.name} fill />
             </div>
             <p className={styles.list__item_ad__title}>
               <span>
