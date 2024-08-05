@@ -1,8 +1,8 @@
 'use client'
-import { useUnit } from 'effector-react'
 import Link from 'next/link'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useUnit } from 'effector-react'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Menu from './Menu'
 import { openMenu, openSearchModal } from '@/context/modals'
 import {
@@ -19,14 +19,18 @@ import { $isAuth } from '@/context/auth'
 import { loginCheckFx } from '@/api/auth'
 import { useEffect } from 'react'
 import { $user } from '@/context/user'
+import { useCartByAuth } from '@/hooks/useCartByAuth'
+import { addProductsFromLSToCart, setCartFromLS } from '@/context/cart'
+import { setLang } from '@/context/lang'
 
 const Header = () => {
   const isAuth = useUnit($isAuth)
   const loginCheckSpinner = useUnit(loginCheckFx.pending)
   const { lang, translations } = useLang()
   const user = useUnit($user)
+  const currentCartByAuth = useCartByAuth()
 
-  console.log(user)
+  console.log(currentCartByAuth)
 
   const handleOpenMenu = () => {
     addOverflowHiddenFromBody()
@@ -39,8 +43,54 @@ const Header = () => {
   }
 
   useEffect(() => {
+    const lang = JSON.parse(localStorage.getItem('lang') as string)
+    const cart = JSON.parse(localStorage.getItem('cart') as string)
+
+    if (lang) {
+      if (lang === 'en' || lang === 'es') {
+        setLang(lang)
+      }
+    }
+
+    if (cart) {
+      setCartFromLS(cart)
+    }
+
     triggerLoginCheck()
   }, [])
+  //SYNC WITH server after auth-ed
+  useEffect(() => {
+    if (isAuth) {
+      const auth = JSON.parse(localStorage.getItem('auth') as string)
+      const cartFromLS = JSON.parse(localStorage.getItem('cart') as string)
+      /* const favoritesFromLS = JSON.parse(
+        localStorage.getItem('favorites') as string
+      )
+      const comparisonFromLS = JSON.parse(
+        localStorage.getItem('comparison') as string
+      ) */
+
+      if (cartFromLS && Array.isArray(cartFromLS)) {
+        addProductsFromLSToCart({
+          jwt: auth.accessToken,
+          cartItems: cartFromLS,
+        })
+      }
+      /*  if (favoritesFromLS && Array.isArray(favoritesFromLS)) {
+        addProductsFromLSToFavorites({
+          jwt: auth.accessToken,
+          favoriteItems: favoritesFromLS,
+        })
+      }
+
+      if (comparisonFromLS && Array.isArray(comparisonFromLS)) {
+        addProductsFromLSToComparison({
+          jwt: auth.accessToken,
+          comparisonItems: comparisonFromLS,
+        })
+      } */
+    }
+  }, [isAuth])
 
   return (
     <header className='header'>

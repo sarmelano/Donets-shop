@@ -6,7 +6,11 @@ import Image from 'next/image'
 import styles from '@/styles/product-list-item/index.module.scss'
 import stylesForAd from '@/styles/ad/index.module.scss'
 import ProductSubtitle from '@/components/elements/ProductSubtitle/ProductSubtitle'
-import { addOverflowHiddenFromBody, formatPrice } from '@/lib/utils/common'
+import {
+  addOverflowHiddenFromBody,
+  formatPrice,
+  isItemInList,
+} from '@/lib/utils/common'
 import ProductLabel from './ProductLabel'
 import ProductItemActionBtn from '@/components/elements/ProductItemActionBtn/ProductItemActionBtn'
 import ProductAvailable from '@/components/elements/ProductAvaliable/ProductAvaliable'
@@ -14,16 +18,28 @@ import { useMediaQuery } from '@/hooks/useMediaQuery'
 import NonexistentCurrency from '@/components/elements/NonexistentCurrency/NonexistentCurrency'
 import { setCurrentProduct } from '@/context/goods'
 import { showQuickViewModal } from '@/context/modals'
+import { productsWithoutSizes } from '@/constants/product'
+import { useCartAction } from '@/hooks/useCartAction'
+import { addProductToCartBySizeTable } from '@/lib/utils/cart'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 const ProductsListItem = ({ item, title }: IProductsListItemProps) => {
   const { lang, translations } = useLang()
   const isMedia800 = useMediaQuery(800)
   const isTitleForNew = title === translations[lang].main_page.new_title
+  const { addToCartSpinner, setAddToCartSpinner, currentCartByAuth } =
+    useCartAction()
+  const isProductInCart = isItemInList(currentCartByAuth, item._id)
 
   const handleShowQuickViewModal = () => {
     addOverflowHiddenFromBody()
     showQuickViewModal()
     setCurrentProduct(item)
+  }
+
+  const addToCart = () => {
+    addProductToCartBySizeTable(item, setAddToCartSpinner, 1)
   }
 
   return (
@@ -118,9 +134,31 @@ const ProductsListItem = ({ item, title }: IProductsListItemProps) => {
               {formatPrice(+item.price)} <NonexistentCurrency />
             </span>
           </div>
-          <button className={`btn-reset ${styles.list__item__cart}`}>
-            {translations[lang].product.to_cart}
-          </button>
+          {productsWithoutSizes.includes(item.type) ? (
+            <button
+              onClick={addToCart}
+              className={`btn-reset ${styles.list__item__cart} ${
+                isProductInCart ? styles.list__item__cart_added : ''
+              }`}
+              disabled={addToCartSpinner}
+              style={addToCartSpinner ? { minWidth: 125, height: 48 } : {}}
+            >
+              {addToCartSpinner ? (
+                <FontAwesomeIcon icon={faSpinner} spin color='#fff' />
+              ) : isProductInCart ? (
+                translations[lang].product.in_cart
+              ) : (
+                translations[lang].product.to_cart
+              )}
+            </button>
+          ) : (
+            <button
+              className={`btn-reset ${styles.list__item__cart}`}
+              onClick={addToCart}
+            >
+              {translations[lang].product.to_cart}
+            </button>
+          )}
         </li>
       )}
     </>
