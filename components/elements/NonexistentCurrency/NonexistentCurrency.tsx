@@ -5,7 +5,7 @@ const NonexistentCurrency = () => (
     src='/img/NonexistentCurrency.svg'
     alt='Non-existent Currency'
     className='nonexistentCurrency'
-    width={32}
+    width={20}
     height={20}
   />
 )

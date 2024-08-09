@@ -1,9 +1,13 @@
 /* eslint-disable indent */
 import { loginCheckFx, refreshTokenFx } from '@/api/auth'
-import { addProductToCartFx, getCartItemFx } from '@/api/cart'
+import { addProductToCartFx, deleteCartItemFx, getCartItemFx } from '@/api/cart'
 import { JWTError } from '@/constants/jwt'
 import { addProductsFromLSToCartFx } from '@/context/cart'
-import { IAddProductsFromLSToCartFx, IAddProductToCartFx } from '@/types/cart'
+import {
+  IAddProductsFromLSToCartFx,
+  IAddProductToCartFx,
+  IDeleteCartItemsFx,
+} from '@/types/cart'
 
 export const handleJWTError = async (
   errorName: string,
@@ -32,6 +36,11 @@ export const handleJWTError = async (
         case 'addProductsFromLSToCartFx':
           return addProductsFromLSToCartFx({
             ...(payload as IAddProductsFromLSToCartFx),
+            jwt: newTokens.accessToken,
+          })
+        case 'deleteCartItemFx':
+          return deleteCartItemFx({
+            ...(payload as IDeleteCartItemsFx),
             jwt: newTokens.accessToken,
           })
         case 'loginCheckFx':

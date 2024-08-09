@@ -1,11 +1,16 @@
 import { createDomain, createEffect, sample } from 'effector'
 import toast from 'react-hot-toast'
-import { addProductToCartFx, updateCartItemCountFx } from '@/api/cart'
+import {
+  addProductToCartFx,
+  deleteCartItemFx,
+  updateCartItemCountFx,
+} from '@/api/cart'
 import { handleJWTError } from '@/lib/utils/errors'
 import {
   IAddProductsFromLSToCartFx,
   IAddProductToCartFx,
   ICartItem,
+  IDeleteCartItemsFx,
   IUpdateCartItemCountFx,
 } from '@/types/cart'
 import api from '../api/apiInstance'
@@ -48,6 +53,8 @@ export const addProductToCart = cart.createEvent<IAddProductToCartFx>()
 export const addProductsFromLSToCart =
   cart.createEvent<IAddProductsFromLSToCartFx>()
 export const updateCartItemCount = cart.createEvent<IUpdateCartItemCountFx>()
+export const setTotalPrice = cart.createEvent<number>()
+export const deleteProductFromCart = cart.createEvent<IDeleteCartItemsFx>()
 
 export const $cart = cart
   .createStore<ICartItem[]>([])
@@ -64,10 +71,17 @@ export const $cart = cart
         item._id === result.id ? { ...item, count: result.count } : item
       ) //set count in element we need (at store)
   )
+  .on(deleteCartItemFx.done, (cart, { result }) =>
+    cart.filter((item) => item._id !== result.id)
+  )
 
 export const $cartFromLs = cart
   .createStore<ICartItem[]>([])
   .on(setCartFromLS, (_, cart) => cart)
+
+export const $totalPrice = cart
+  .createStore<number>(0)
+  .on(setTotalPrice, (_, value) => value)
 
 sample({
   clock: addProductToCart,
@@ -88,4 +102,11 @@ sample({
   source: $cart,
   fn: (_, data) => data,
   target: updateCartItemCountFx,
+})
+
+sample({
+  clock: deleteProductFromCart,
+  source: $cart,
+  fn: (_, data) => data,
+  target: deleteCartItemFx,
 })
