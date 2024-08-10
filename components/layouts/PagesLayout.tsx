@@ -13,8 +13,12 @@ import {
   removeOverflowHiddenFromBody,
 } from '@/lib/utils/common'
 import { $openAuthPopup } from '@/context/auth'
+import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
+import CookieAlert from '../modules/CookieAlert/CookieAlert'
 
 const PagesLayout = ({ children }: { children: React.ReactNode }) => {
+  const [cookieAlertOpen, setCookieAlertOpen] = useState(false)
   const showQuickViewModal = useUnit($showQuickViewModal)
   const showSizeTable = useUnit($showSizeTable)
   const openAuthPopup = useUnit($openAuthPopup)
@@ -25,6 +29,13 @@ const PagesLayout = ({ children }: { children: React.ReactNode }) => {
   }
 
   const handleCloseSizeTable = () => closeSizeTableByCheck(showQuickViewModal)
+
+  useEffect(() => {
+    const checkCookie = document.cookie.indexOf('CookieBy=Donets')
+    checkCookie != -1
+      ? setCookieAlertOpen(false)
+      : setTimeout(() => setCookieAlertOpen(true), 3000)
+  }, [])
 
   return (
     <html lang='en'>
@@ -46,6 +57,16 @@ const PagesLayout = ({ children }: { children: React.ReactNode }) => {
           className={`auth-overlay ${openAuthPopup ? 'overlay-active' : ''}`}
           onClick={handleCloseAuthPopup}
         />
+        {cookieAlertOpen && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.5 }}
+            className='cookie-popup'
+          >
+            <CookieAlert setCookieAlertOpen={setCookieAlertOpen} />
+          </motion.div>
+        )}
         <Toaster position='top-center' reverseOrder={false} />
       </body>
     </html>

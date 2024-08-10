@@ -4,7 +4,9 @@
       "more": "More",
       "order_price": "Order price",
       "ad": "Ad",
-      "all_link": "All"
+      "all_link": "All",
+      "accept": "Accept",
+      "cookie_text": "DONETS processes <a href=\"https://support.google.com/accounts/answer/61416\">Cookies</a> for the correct operation of the site and personalization of services, incl. using metric programs and analytics systems. You can prevent the processing of <a href=\"https://support.google.com/accounts/answer/61416\">Cookies</a> in your browser settings."
     },
     "header": {
       "menu_btn": "Menu",
@@ -172,7 +174,9 @@
       "more": "Más",
       "order_price": "Precio del pedido",
       "ad": "Ad",
-      "all_link": "Todos"
+      "all_link": "Todos",
+      "accept": "Acepte",
+      "cookie_text": "DONETS procesa <a href=\"https://support.google.com/accounts/answer/61416\">Cookies</a> para el correcto funcionamiento del sitio y la personalización de los servicios, incl. mediante programas métricos y sistemas de análisis. Puede evitar el procesamiento de <a href=\"https://support.google.com/accounts/answer/61416\">Cookies</a> en la configuración de su navegador."
     },
     "header": {
       "menu_btn": "Menú",
