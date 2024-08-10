@@ -1,6 +1,7 @@
 'use client'
 import { useUnit } from 'effector-react'
 import { Toaster } from 'react-hot-toast'
+import { Next13ProgressBar } from 'next13-progressbar'
 import {
   $showQuickViewModal,
   closeQuickViewModal,
@@ -40,6 +41,7 @@ const PagesLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang='en'>
       <body>
+        <Next13ProgressBar height='4px' color='#9466FF' showOnShallow />
         <Layout>{children}</Layout>
         <div
           className={`quick-view-modal-overlay ${
