@@ -215,6 +215,17 @@ body::-webkit-scrollbar-thumb:hover {
   font-weight: normal;
 }
 
+.not-empty {
+  content: '';
+  position: absolute;
+  top: 9px;
+  right: 2px;
+  width: 8px;
+  height: 8px;
+  background-color: #FF0C0C;
+  border-radius: 50%;
+}
+
 .quick-modal-dots li.slick-active button {
   background-image: url(/img/white-ellipse.svg) !important;
 }
