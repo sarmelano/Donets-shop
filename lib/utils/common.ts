@@ -167,3 +167,11 @@ export const deleteProductFromLS = <T>(
     setShouldShowEmpty(true)
   } */
 }
+
+export const showCountMessage = (count: string, lang: string) => {
+  if (count == '1') {
+    return lang === 'es' ? 'artículo' : 'item'
+  }
+
+  return lang === 'es' ? 'artículos' : 'items'
+}

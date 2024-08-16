@@ -1,6 +1,10 @@
 /* eslint-disable indent */
 import { loginCheckFx, refreshTokenFx } from '@/api/auth'
-import { addProductToCartFx, deleteCartItemFx, getCartItemFx } from '@/api/cart'
+import {
+  addProductToCartFx,
+  deleteCartItemFx,
+  getCartItemsFx,
+} from '@/api/cart'
 import { JWTError } from '@/constants/jwt'
 import { addProductsFromLSToCartFx } from '@/context/cart'
 import {
@@ -25,7 +29,7 @@ export const handleJWTError = async (
 
       switch (repeatRequestMethodName) {
         case 'getCartItemsFx':
-          return getCartItemFx({
+          return getCartItemsFx({
             jwt: newTokens.accessToken,
           })
         case 'addProductToCartFx':

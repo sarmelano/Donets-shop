@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 import { AnimatePresence, motion } from 'framer-motion'
 import { forwardRef } from 'react'
-import { getCartItemFx } from '@/api/cart'
+import { getCartItemsFx } from '@/api/cart'
 import { withClickOutside } from '@/components/hocs/withClickOutside'
 import { useCartByAuth } from '@/hooks/useCartByAuth'
 import { useLang } from '@/hooks/useLang'
@@ -18,7 +18,7 @@ const CartPopup = forwardRef<HTMLDivElement, IWrappedComponentProps>(
   ({ open, setOpen }, ref) => {
     const { lang, translations } = useLang()
     const handleShowPopup = () => setOpen(true)
-    const spinner = useUnit(getCartItemFx.pending)
+    const spinner = useUnit(getCartItemsFx.pending)
     const currentCartByAuth = useCartByAuth()
     const { animatedPrice } = useTotalPrice()
 
