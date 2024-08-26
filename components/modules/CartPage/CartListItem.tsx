@@ -1,11 +1,13 @@
 import Image from 'next/image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import { ICartItem } from '@/types/cart'
 import { useCartItemAction } from '@/hooks/useCartItemAction'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { formatPrice } from '@/lib/utils/common'
+import NonexistentCurrency from '@/components/elements/NonexistentCurrency/NonexistentCurrency'
 import ProductCounter from '../ProductsListItem/ProductCounter'
 import styles from '@/styles/cart-page/index.module.scss'
-import NonexistentCurrency from '@/components/elements/NonexistentCurrency/NonexistentCurrency'
 
 const CartListItem = ({ item }: { item: ICartItem }) => {
   const {
@@ -27,7 +29,11 @@ const CartListItem = ({ item }: { item: ICartItem }) => {
         className={`btn-reset ${styles.cart__list__item__delete}`}
         onClick={handleDeleteCartItem}
       >
-        <span />
+        {deleteSpinner ? (
+          <FontAwesomeIcon icon={faSpinner} spin color='#fff' />
+        ) : (
+          <span />
+        )}
       </button>
       <div
         className={`${styles.cart__list__item__img} ${styles.cart__list__item__block}`}
