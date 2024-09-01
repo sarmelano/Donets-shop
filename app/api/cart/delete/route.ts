@@ -8,3 +8,5 @@ export async function DELETE(req: Request) {
     throw new Error((error as Error).message)
   }
 }
+
+export const dynamic = 'force-dynamic'

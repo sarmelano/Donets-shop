@@ -27,3 +27,5 @@ export async function POST(req: Request) {
 
   return NextResponse.json(tokens)
 }
+
+export const dynamic = 'force-dynamic'

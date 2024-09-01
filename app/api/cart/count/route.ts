@@ -31,3 +31,5 @@ export async function PATCH(req: Request) {
     throw new Error((error as Error).message)
   }
 }
+
+export const dynamic = 'force-dynamic'

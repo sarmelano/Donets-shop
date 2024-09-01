@@ -1,7 +1,7 @@
 'use client'
 import { useUnit } from 'effector-react'
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import HeadingWithCount from '@/components/elements/HeadingWithCount/HeadingWithCount'
 import Breadcrumbs from '@/components/modules/BreadCrumbs/BreadCrumbs'
 import CartList from '@/components/modules/CartPage/CartList'
@@ -31,10 +31,12 @@ const CartPage = () => {
 
   return (
     <main>
-      <Breadcrumbs
-        getDefaultTextGenerator={getDefaultTextGenerator}
-        getTextGenerator={getTextGenerator}
-      />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Breadcrumbs
+          getDefaultTextGenerator={getDefaultTextGenerator}
+          getTextGenerator={getTextGenerator}
+        />
+      </Suspense>
       {!shouldShowEmpty ? (
         <section className={styles.cart}>
           <div className='container'>

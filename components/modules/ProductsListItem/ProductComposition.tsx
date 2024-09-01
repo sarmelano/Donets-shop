@@ -8,8 +8,7 @@ const ProductComposition = ({ composition }: { composition: string }) => {
   return (
     <span className={styles.product__composition}>
       {translations[lang].product.composition}:{' '}
-      {/**eslint-disable-next-line @typescript-eslint/ban-ts-comment
-       * @ts-ignore */}
+      {/** @ts-expect-error: `color` might not exist in `translations[lang].catalog` */}
       {translations[lang].catalog[composition]}
     </span>
   )

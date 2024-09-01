@@ -54,8 +54,7 @@ const Breadcrumbs = ({
         {breadcrumbs.map((crumb, idx) =>
           crumb.text ? (
             <li key={idx} className='breadcrumbs__item'>
-              {/**eslint-disable-next-line @typescript-eslint/ban-ts-comment
-               * @ts-ignore */}
+              {/** @ts-expect-error: `color` might not exist in `translations[lang].catalog` */}
               <Crumb
                 {...crumb}
                 key={idx}

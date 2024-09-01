@@ -7,8 +7,7 @@ const ProductColor = ({ color }: { color: string }) => {
 
   return (
     <span className={styles.product__color}>
-      {/**eslint-disable-next-line @typescript-eslint/ban-ts-comment
-       * @ts-ignore */}
+      {/** @ts-expect-error: `color` might not exist in `translations[lang].catalog` */}
       {translations[lang].catalog.color}: {translations[lang].catalog[color]}
     </span>
   )
